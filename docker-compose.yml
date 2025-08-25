@@ -1,0 +1,7 @@
+services:
+  my_tag_all_bot_user:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    container_name: my_tag_all_bot_user
