@@ -25,7 +25,7 @@ async def get_chat_members(_, message: Message):
             "Привет это бот чтобы тегать всех usage: /all сейчас это не сработало тк. мы находимся в приватном чате или ты использовал start"
         )
 
-    members = await app.get_chat_members(message.chat.id)
+    members = app.get_chat_members(message.chat.id)
     if not members:
         return await message.reply("Нет доступа к участникам чата")
 
