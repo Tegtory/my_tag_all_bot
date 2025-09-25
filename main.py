@@ -35,10 +35,12 @@ async def get_chat_members(_, message: Message):
         if member.user and member.user.username:
             chat_members += f"@{member.user.username} \n"
 
-        if len(chat_members) > 3000:
+        if len(chat_members) > 2000:
             await message.reply(chat_members)
             chat_members = ""
             await asyncio.sleep(5)
+    if chat_members:
+        await message.reply(chat_members)
 
 
 app.run()
